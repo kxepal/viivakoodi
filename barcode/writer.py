@@ -9,7 +9,7 @@ import xml.dom
 from barcode import __release__
 
 try:
-    import Image, ImageDraw, ImageFont
+    import Image,ImageDraw, ImageFont
 except ImportError:
     try:
         from PIL import Image, ImageDraw, ImageFont  # lint:ok

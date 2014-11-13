@@ -3,12 +3,9 @@
 from __future__ import print_function
 
 import os
-import sys
-
-import barcode
-
 from argparse import ArgumentParser
 
+import barcode
 from barcode.writer import ImageWriter, SVGWriter
 
 # Optional PyQt4 GUI
@@ -43,11 +40,11 @@ def create_barcode(args, parser):
     args.type = args.type.upper()
     if args.type != 'SVG' and args.type not in IMG_FORMATS:
         parser.error('Unknown type {type}. Try list action for available '
-            'types.'.format(type=args.type))
+                     'types.'.format(type=args.type))
     args.barcode = args.barcode.lower()
     if args.barcode not in barcode.PROVIDED_BARCODES:
         parser.error('Unknown barcode {bc}. Try list action for available '
-            'barcodes.'.format(bc=args.barcode))
+                     'barcodes.'.format(bc=args.barcode))
     if args.type != 'SVG':
         opts = dict(format=args.type)
         writer = ImageWriter()
@@ -63,40 +60,54 @@ def main():
     msg = []
     if ImageWriter is None:
         msg.append('Image output disabled (PIL not found), --type option '
-            'disabled.')
+                   'disabled.')
     else:
         msg.append('Image output enabled, use --type option to give image '
-            'format (png, jpeg, ...).')
+                   'format (png, jpeg, ...).')
     if QtCore is None:
         msg.append('PyQt not found, gui action disabled.')
     else:
         msg.append('PyQt found. Use gui action to get a simple GUI.')
-    parser = ArgumentParser(description=barcode.__description__,
+    parser = ArgumentParser(
+        description=barcode.__description__,
         epilog=' '.join(msg))
-    parser.add_argument('-v', '--version', action='version',
+    parser.add_argument(
+        '-v', '--version',
+        action='version',
         version='%(prog)s ' + barcode.__release__)
     subparsers = parser.add_subparsers(title='Actions')
-    create_parser = subparsers.add_parser('create', help='Create a barcode '
-        'with the given options.')
-    create_parser.add_argument('code', help='Code to render as barcode.')
-    create_parser.add_argument('output', help='Filename for output '
-        'without extension, e. g. mybarcode.')
-    create_parser.add_argument('-c', '--compress', action='store_true',
+    create_parser = subparsers.add_parser(
+        'create',
+        help='Create a barcode with the given options.')
+    create_parser.add_argument(
+        'code',
+        help='Code to render as barcode.')
+    create_parser.add_argument(
+        'output',
+        help='Filename for output without extension, e.g. mybarcode.')
+    create_parser.add_argument(
+        '-c', '--compress',
+        action='store_true',
         help='Compress output, only recognized if type is svg.')
-    create_parser.add_argument('-b', '--barcode', help='Barcode to use '
-        '[default: %(default)s].')
+    create_parser.add_argument(
+        '-b', '--barcode',
+        help='Barcode to use [default: %(default)s].')
     if ImageWriter is not None:
-        create_parser.add_argument('-t', '--type', help='Type of output '
-            '[default: %(default)s].')
-    list_parser = subparsers.add_parser('list', help='List available '
-        'image and code types.')
+        create_parser.add_argument(
+            '-t', '--type',
+            help='Type of output [default: %(default)s].')
+    list_parser = subparsers.add_parser(
+        'list', help='List available image and code types.')
     list_parser.set_defaults(func=list_types)
     if QtCore is not None:
-        gui_parser = subparsers.add_parser('gui', help='Opens a simple '
-            'PyQt GUI to create barcodes.')
+        gui_parser = subparsers.add_parser(
+            'gui', help='Opens a simple PyQt GUI to create barcodes.')
         gui_parser.set_defaults(func=open_gui)
-    create_parser.set_defaults(type='svg', compress=False, func=create_barcode,
-        barcode='code39')
+    create_parser.set_defaults(
+        barcode='code39',
+        compress=False,
+        func=create_barcode,
+        type='svg')
     args = parser.parse_args()
     args.func(args, parser)
 

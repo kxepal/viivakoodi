@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """Module: barcode.codex
 
 :Provided barcodes: Code 39, Code 128, PZN
 """
-__docformat__ = 'restructuredtext en'
+
+from __future__ import unicode_literals
 
 from barcode.base import Barcode
 from barcode.charsets import code128, code39
 from barcode.errors import *
 
+__docformat__ = 'restructuredtext en'
 
 # Sizes
 MIN_SIZE = 0.2
@@ -24,9 +23,10 @@ def check_code(code, name, allowed):
         if char not in allowed:
             wrong.append(char)
     if wrong:
-        raise IllegalCharacterError('The following characters are not '
+        raise IllegalCharacterError(
+            'The following characters are not '
             'valid for {name}: {wrong}'.format(name=name,
-                wrong=', '.join(wrong)))
+                                               wrong=', '.join(wrong)))
 
 
 class Code39(Barcode):
@@ -227,7 +227,7 @@ class Code128(Barcode):
             code_num = self._convert(char)
             if code_num is not None:
                 encoded.append(code_num)
-        # Finally look in the buffer
+            # Finally look in the buffer
         if len(self._buffer) == 1:
             encoded.extend(self._new_charset('B'))
             encoded.append(self._convert(self._buffer[0]))

@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """Module: barcode.ean
 
 :Provided barcodes: EAN-13, EAN-8, JAN
 """
+
+from __future__ import unicode_literals
 
 from barcode.base import Barcode
 from barcode.charsets import ean as _ean

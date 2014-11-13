@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """Module: barcode.isxn
 
 :Provided barcodes: ISBN-13, ISBN-10, ISSN
@@ -25,11 +22,13 @@ Example::
     u'0132354187'
 
 """
-__docformat__ = 'restructuredtext en'
+
+from __future__ import unicode_literals
 
 from barcode.ean import EuropeanArticleNumber13
 from barcode.errors import *
 
+__docformat__ = 'restructuredtext en'
 
 class InternationalStandardBookNumber13(EuropeanArticleNumber13):
     """Initializes new ISBN-13 barcode.

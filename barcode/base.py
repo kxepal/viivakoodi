@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """barcode.base
 
 """
+
+from __future__ import unicode_literals
 
 from barcode.writer import SVGWriter
 

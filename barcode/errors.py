@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
+"""barcode.errors
+"""
 
 from __future__ import unicode_literals
 
-"""barcode.errors
-"""
 __docformat__ = 'restructuredtext en'
 
 

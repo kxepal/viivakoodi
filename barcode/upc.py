@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """Module: barcode.upc
 
 :Provided barcodes: UPC-A
 """
-__docformat__ = 'restructuredtext en'
+
+from __future__ import unicode_literals
 
 from barcode.ean import EuropeanArticleNumber13
+
+__docformat__ = 'restructuredtext en'
 
 
 class UniversalProductCodeA(EuropeanArticleNumber13):
