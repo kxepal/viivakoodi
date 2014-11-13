@@ -1,5 +1,5 @@
-pyBarcode SVGWriter
-===================
+SVGWriter
+=========
 
 Creates barcodes as (compressed) SVG objects.
 

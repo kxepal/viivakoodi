@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# pyBarcode documentation build configuration file, created by
+# viivakoodi documentation build configuration file, created by
 # sphinx-quickstart on Fri Mar 12 13:29:48 2010.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -19,7 +19,7 @@ import sys, os
 #sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
 import barcode
-LOGO = os.path.join('images', 'pybarcode_small.png')
+LOGO = os.path.join('images', 'viivakoodi_small.png')
 
 # -- General configuration -----------------------------------------------------
 
@@ -162,7 +162,7 @@ html_use_modindex = False
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pyBarcodedoc'
+htmlhelp_basename = 'viivakoodidoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -176,7 +176,7 @@ htmlhelp_basename = 'pyBarcodedoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'pyBarcode.tex', u'pyBarcode Documentation',
+  ('index', 'viivakoodi.tex', u'viivakoodi Documentation',
    u'Thorsten Weimann', 'manual'),
 ]
 

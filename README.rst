@@ -1,10 +1,14 @@
-pyBarcode
-=========
+Viivakoodi
+==========
+
+`Viivakoodi` (`barcode in Suomi <https://fi.wikipedia.org/wiki/Viivakoodi>`_)
+is the fork of `pyBarcode <https://bitbucket.org/whitie/python-barcode/>`_
+project.
 
 This library provides a simple way to create barcodes using only the
 Python standardlib. The barcodes where created as SVG objects.
 
-Report bugs at https://bitbucket.org/whitie/python-barcode/issues/
+Report bugs at https://github.com/kxepal/viivakoodi/issues/
 
 
 Requirements
@@ -22,11 +26,11 @@ Installation
 
 Make sure you have setuptools/distribute installed.
 
-Unpack the downloaded file, cd into the pyBarcode directory and run
+Unpack the downloaded file, cd into the viivakoodi directory and run
 `python setup.py install`. Or just copy the barcode dir somewhere in
 your PYTHONPATH.
 
-The best way is to use pip: `pip install pyBarcode`.
+The best way is to use pip: `pip install viivakoodi`.
 
 
 Provided Barcodes

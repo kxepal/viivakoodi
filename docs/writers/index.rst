@@ -1,7 +1,7 @@
 .. index:: writer, writer_options
 
-pyBarcode Writer
-================
+Writer
+======
 
 Common Writer Options
 ---------------------

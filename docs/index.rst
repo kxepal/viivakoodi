@@ -1,7 +1,7 @@
-pyBarcode's Documentation
-=========================
+viivakoodi's Documentation
+==========================
 
-.. image:: /images/pybarcode.png
+.. image:: /images/viivakoodi.png
 
 Contents
 --------
@@ -24,14 +24,11 @@ Latest version
 ==============
 
 You can always download the latest release
-`here <https://bitbucket.org/whitie/python-barcode/downloads/>`_.
+`here <https://github.com/kxepal/viivakoodi/releases/>`_.
 
 Related Links
 =============
 
-:Project page: https://bitbucket.org/whitie/python-barcode/
+:Project page: https://github.com/kxepal/viivakoodi
 
-:Issues: https://bitbucket.org/whitie/python-barcode/issues/
-
-:Wiki: https://bitbucket.org/whitie/python-barcode/wiki/Home
-
+:Issues: https://github.com/kxepal/viivakoodi/issues/

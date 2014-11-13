@@ -2,8 +2,8 @@
 
 """
 
-pyBarcode
-=========
+viivakoodi
+==========
 
 This package provides a simple way to create standard barcodes.
 It needs no external packages to be installed, the barcodes are
@@ -12,16 +12,16 @@ installed, the barcodes can also be rendered as images (all
 formats supported by PIL).
 """
 
-__project__ = 'pyBarcode'
-__author__ = 'Thorsten Weimann'
-__copyright__ = '2010-2013, ' + __author__
-__author_email__ = 'weimann@ymail.com'
+__project__ = 'viivakoodi'
+__author__ = 'Thorsten Weimann, Alexander Shorin'
+__copyright__ = '2010-2013, Thorsten Weimann; 2014, Alexander Shorin'
+__author_email__ = 'kxepal@gmail.com'
 __description__ = ('Create standard barcodes with Python. No external '
                    'modules needed (optional PIL support included).')
 __version__ = '0.8'
 __release__ = '{version}beta1'.format(version=__version__)
 __license__ = 'MIT'
-__url__ = 'https://bitbucket.org/whitie/python-barcode/'
+__url__ = 'https://github.com/kxepal/viivakoodi'
 __classifiers__ = [
     'Development Status :: 5 - Production/Stable',
     'Environment :: Console',
