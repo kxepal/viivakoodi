@@ -21,7 +21,7 @@ __release__ = '{version}beta1'.format(version=__version__)
 __license__ = 'MIT'
 __url__ = 'https://github.com/kxepal/viivakoodi'
 __classifiers__ = [
-    'Development Status :: 5 - Production/Stable',
+    'Development Status :: 4 - Beta',
     'Environment :: Console',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
