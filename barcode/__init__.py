@@ -16,8 +16,8 @@ __copyright__ = '2010-2013, Thorsten Weimann; 2014, Alexander Shorin'
 __author_email__ = 'kxepal@gmail.com'
 __description__ = ('Create standard barcodes with Python. No external '
                    'modules needed (optional PIL support included).')
-__version__ = '0.8'
-__release__ = '{version}beta1'.format(version=__version__)
+__version__ = '0.8.0'
+__release__ = '{version}'.format(version=__version__)
 __license__ = 'MIT'
 __url__ = 'https://github.com/kxepal/viivakoodi'
 __classifiers__ = [
