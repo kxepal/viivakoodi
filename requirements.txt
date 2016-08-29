@@ -1,2 +1,0 @@
-#package==version
-#-e git+ssh://github.com/steenzout/example.git@TAG#egg=example
