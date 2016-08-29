@@ -34,7 +34,7 @@ setup(
     entry_points={
         'console_scripts':
             ['{0} = barcode.pybarcode:main'.format(console_script)],
-        },
+    },
     install_requires=required,
     include_package_data=True,
 )

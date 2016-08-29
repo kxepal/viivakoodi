@@ -30,6 +30,7 @@ from barcode.errors import *
 
 __docformat__ = 'restructuredtext en'
 
+
 class InternationalStandardBookNumber13(EuropeanArticleNumber13):
     """Initializes new ISBN-13 barcode.
 

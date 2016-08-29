@@ -1,0 +1,4 @@
+alabaster==0.7.9
+recommonmark
+semantic_version==2.5.0
+Sphinx==1.4.5

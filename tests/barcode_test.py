@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals, print_function
-
 """
 
 Performs some tests with pyBarcode. All created barcodes where saved in the
 tests subdirectory with a tests.html to watch them.
 
 """
-__docformat__ = 'restructuredtext en'
+
+from __future__ import unicode_literals, print_function
 
 import codecs
 import os
@@ -16,11 +14,13 @@ import sys
 import unittest
 
 from barcode import get_barcode, get_barcode_class, __version__
+
 try:
     from barcode.writer import ImageWriter
 except ImportError:
     ImageWriter = None  # lint:ok
 
+__docformat__ = 'restructuredtext en'
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 TESTPATH = os.path.join(PATH, 'tests')
@@ -72,8 +72,13 @@ def test():
             print('Error:', e)
             sys.exit(1)
     objects = []
-    append = lambda x, y: objects.append(OBJECTS.format(filename=x, name=y))
-    append_img = lambda x, y: objects.append(IMAGES.format(filename=x, name=y))
+
+    def append(x, y):
+        objects.append(OBJECTS.format(filename=x, name=y))
+
+    def append_img(x, y):
+        objects.append(IMAGES.format(filename=x, name=y))
+
     options = dict(module_width=0.495, module_height=25.0)
     for codename, code in TESTCODES:
         bcode = get_barcode(codename, code)
@@ -104,7 +109,6 @@ def test():
 
 
 class TestBarcodeBuilds(unittest.TestCase):
-
     def test_ean8(self):
         ref = ('1010100011000110100100110101111010101000100'
                '100010011100101001000101')
@@ -117,4 +121,3 @@ if __name__ == '__main__':
     test()
     print('\nNow open {htmlfile} in your browser.'.format(htmlfile=HTMLFILE))
     unittest.main()
-
