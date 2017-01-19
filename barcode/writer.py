@@ -98,7 +98,7 @@ class BaseWriter(object):
 
         :parameters:
             modules_per_line : Integer
-                Number of mudules in one line.
+                Number of modules in one line.
             number_of_lines : Integer
                 Number of lines of the barcode.
             dpi : Integer
