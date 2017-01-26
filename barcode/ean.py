@@ -164,7 +164,36 @@ class EuropeanArticleNumber8(EuropeanArticleNumber13):
         return [code]
 
 
+class EuropeanArticleNumber14(EuropeanArticleNumber13):
+        """Represents an EAN-14 barcode. See EAN13's __init__ for details.
+
+        :parameters:
+            ean : String
+                The ean number as string.
+            writer : barcode.writer Instance
+                The writer to render the barcode (default: SVGWriter).
+        """
+
+        name = 'EAN-14'
+        digits = 13
+
+        def calculate_checksum(self):
+            """Calculates the checksum for EAN13-Code.
+
+            :returns: The checksum for `self.ean`.
+            :rtype: Integer
+            """
+
+            def sum_(x, y):
+                return int(x) + int(y)
+
+            evensum = reduce(sum_, self.ean[::2])
+            oddsum = reduce(sum_, self.ean[1::2])
+            return (10 - (((evensum * 3) + oddsum) % 10)) % 10
+
+
 # Shortcuts
 EAN13 = EuropeanArticleNumber13
+EAN14 = EuropeanArticleNumber14
 EAN8 = EuropeanArticleNumber8
 JAN = JapanArticleNumber

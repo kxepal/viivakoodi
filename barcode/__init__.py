@@ -40,7 +40,7 @@ __classifiers__ = [
 
 from barcode.errors import BarcodeNotFoundError
 from barcode.codex import Code39, PZN, Code128
-from barcode.ean import EAN8, EAN13, JAN
+from barcode.ean import EAN8, EAN13, EAN14, JAN
 from barcode.isxn import ISBN10, ISBN13, ISSN
 from barcode.upc import UPCA
 
@@ -54,7 +54,8 @@ __BARCODE_MAP = dict(
     ean8=EAN8,
     ean13=EAN13,
     ean=EAN13,
-    gtin=EAN13,
+    ean14=EAN14,
+    gtin=EAN14,
     jan=JAN,
     upc=UPCA,
     upca=UPCA,
