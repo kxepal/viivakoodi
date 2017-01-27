@@ -33,7 +33,7 @@ class UniversalProductCodeA(EuropeanArticleNumber13):
             UniversalProductCodeA.digits = 12
             upc = '0' + upc
         self.upc = upc
-        EuropeanArticleNumber13.__init__(self, upc, writer)
+        super(UniversalProductCodeA, self).__init__(upc, writer)
 
     def __unicode__(self):
         return self.upc

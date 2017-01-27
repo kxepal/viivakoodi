@@ -115,7 +115,7 @@ class JapanArticleNumber(EuropeanArticleNumber13):
         if int(jan[:3]) not in JapanArticleNumber.valid_country_codes:
             raise WrongCountryCodeError("Country code isn't between 450-460 "
                                         "or 490-500.")
-        EuropeanArticleNumber13.__init__(self, jan, writer)
+        super(JapanArticleNumber, self).__init__(jan, writer)
 
 
 class EuropeanArticleNumber8(EuropeanArticleNumber13):
@@ -131,9 +131,6 @@ class EuropeanArticleNumber8(EuropeanArticleNumber13):
     name = 'EAN-8'
 
     digits = 7
-
-    def __init__(self, ean, writer=None):
-        EuropeanArticleNumber13.__init__(self, ean, writer)
 
     def calculate_checksum(self):
         """Calculates the checksum for EAN8-Code.
