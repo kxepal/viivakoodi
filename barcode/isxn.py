@@ -48,7 +48,7 @@ class InternationalStandardBookNumber13(EuropeanArticleNumber13):
         self.isbn13 = isbn
         if isbn[:3] not in ('978', '979'):
             raise WrongCountryCodeError('ISBN must start with 978 or 979.')
-        EuropeanArticleNumber13.__init__(self, isbn, writer)
+        super(InternationalStandardBookNumber13, self).__init__(isbn, writer)
 
 
 class InternationalStandardBookNumber10(InternationalStandardBookNumber13):
@@ -71,7 +71,9 @@ class InternationalStandardBookNumber10(InternationalStandardBookNumber13):
         isbn = isbn[:self.digits]
         self.isbn10 = isbn
         self.isbn10 = '{0}{1}'.format(isbn, self._calculate_checksum())
-        InternationalStandardBookNumber13.__init__(self, '978' + isbn, writer)
+        super(InternationalStandardBookNumber10, self).__init__(
+            '978' + isbn, writer,
+        )
 
     def _calculate_checksum(self):
         tmp = sum([x * int(y) for x, y in enumerate(self.isbn10[:9],
@@ -107,7 +109,9 @@ class InternationalStandardSerialNumber(EuropeanArticleNumber13):
         issn = issn[:self.digits]
         self.issn = issn
         self.issn = '{0}{1}'.format(issn, self._calculate_checksum())
-        EuropeanArticleNumber13.__init__(self, self.make_ean(), writer)
+        super(InternationalStandardSerialNumber, self).__init__(
+            self.make_ean(), writer,
+        )
 
     def _calculate_checksum(self):
         tmp = 11 - sum([x * int(y) for x, y in

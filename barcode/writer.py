@@ -195,8 +195,9 @@ class BaseWriter(object):
 class SVGWriter(BaseWriter):
 
     def __init__(self):
-        BaseWriter.__init__(self, self._init, self._create_module,
-                            self._create_text, self._finish)
+        super(SVGWriter, self).__init__(
+            self._init, self._create_module, self._create_text, self._finish,
+        )
         self.compress = False
         self.dpi = 25.4
         self._document = None
@@ -261,8 +262,10 @@ else:
     class ImageWriter(BaseWriter):
 
         def __init__(self):
-            BaseWriter.__init__(self, self._init, self._paint_module,
-                                self._paint_text, self._finish)
+            super(ImageWriter, self).__init__(
+                self._init, self._paint_module, self._paint_text,
+                self._finish,
+            )
             self.format = 'PNG'
             self.dpi = 300
             self._image = None
