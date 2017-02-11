@@ -71,8 +71,8 @@ Interactive::
     >>> fullname = ean.save('ean13_barcode')
     u'ean13_barcode.png'
     # New in v0.4.2
-    >>> from StringIO import StringIO
-    >>> fp = StringIO()
+    >>> from io import BytesIO
+    >>> fp = BytesIO()
     >>> ean.write(fp)
     # or
     >>> f = open('/my/new/file', 'wb')
