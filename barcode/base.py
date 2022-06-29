@@ -79,7 +79,7 @@ class Barcode(object):
                 The same as in `self.render`.
         """
         output = self.render(options)
-        if hasattr(output, 'tostring'):
+        if hasattr(output, 'tostring') or hasattr(output, 'tobytes'):
             output.save(fp, format=self.writer.format)
         else:
             fp.write(output)
